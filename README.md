@@ -29,9 +29,9 @@ These are functional and unit tests checking the operation of the following **CR
 * DELETE
   - Delete a board <br><br>
 
-Test were conducted based on a <b>test scenario</b>:<br>
+Test were conducted based on a <b>test scenario</b>: ![testScenario_TrelloAPI.pdf](./testScenario_TrelloAPI.pdf)<br>
 
-**Bug report**: <br>
+**Bug report**: ![bugReport_TrelloAPI.pdf](./bugReport_01_TrelloAPI.pdf)<br>
 
 ⚡🤖 During the testing procedure, **28 automated tests** were executed. 🤖⚡ <br>
 
