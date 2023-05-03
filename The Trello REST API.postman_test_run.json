@@ -1,0 +1,465 @@
+{
+	"id": "6938f9ef-63d3-49f5-994f-c0627ab5d8ce",
+	"name": "The Trello REST API",
+	"timestamp": "2023-05-03T20:33:47.948Z",
+	"collection_id": "26579627-263ee544-e070-466d-bba3-a6ed11b2f997",
+	"folder_id": 0,
+	"environment_id": "26579627-47bb2f93-c675-486b-8590-9f617f736fdc",
+	"totalPass": 28,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-03T20:33:39.880Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6cf5c556-148e-4970-9afe-316435f6c6be",
+			"name": "Create a board with a valid name",
+			"url": "{{baseURL}}/1/boards/?name=Valid name&key={{apiKey}}&token={{apiToken}}",
+			"time": 1011,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Check if board name is a correct value": true,
+				"Check the length of the board name": true,
+				"Set boardID to enviroment variable": true,
+				"Set organizationID to enviroment variable": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if board name is a correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check the length of the board name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set boardID to enviroment variable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set organizationID to enviroment variable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1011
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Check if board name is a correct value": true,
+					"Check the length of the board name": true,
+					"Set boardID to enviroment variable": true,
+					"Set organizationID to enviroment variable": true
+				}
+			]
+		},
+		{
+			"id": "74527284-d14b-4757-a90e-ff8f56c1190d",
+			"name": "Create a board with no name",
+			"url": "{{baseURL}}/1/boards/?name=&key={{apiKey}}&token={{apiToken}}",
+			"time": 343,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Unsuccessful POST request": true,
+				"Verify if board has not name value": true
+			},
+			"testPassFailCounts": {
+				"Unsuccessful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify if board has not name value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				343
+			],
+			"allTests": [
+				{
+					"Unsuccessful POST request": true,
+					"Verify if board has not name value": true
+				}
+			]
+		},
+		{
+			"id": "1122ea8b-aa52-4251-acd4-b043e48c4ef4",
+			"name": "Create a board with a name that consists of only a space or spaces",
+			"url": "{{baseURL}}/1/boards/?name= &key={{apiKey}}&token={{apiToken}}",
+			"time": 162,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Unsuccessful POST request": true,
+				"Check if name value is a space or spaces": true
+			},
+			"testPassFailCounts": {
+				"Unsuccessful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if name value is a space or spaces": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				162
+			],
+			"allTests": [
+				{
+					"Unsuccessful POST request": true,
+					"Check if name value is a space or spaces": true
+				}
+			]
+		},
+		{
+			"id": "95145bf3-a43f-43f4-b2a6-094732650119",
+			"name": "Create a board with a name that consists of special characters",
+			"url": "{{baseURL}}/1/boards/?name=*Name ! $&key={{apiKey}}&token={{apiToken}}",
+			"time": 487,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Check special characters in board name": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check special characters in board name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				487
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Check special characters in board name": true
+				}
+			]
+		},
+		{
+			"id": "b779a00e-16a2-448b-8013-3ce755439ad3",
+			"name": "Get a board",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 420,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful GET request": true,
+				"Check if one board has been retrieved": true
+			},
+			"testPassFailCounts": {
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if one board has been retrieved": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				420
+			],
+			"allTests": [
+				{
+					"Successful GET request": true,
+					"Check if one board has been retrieved": true
+				}
+			]
+		},
+		{
+			"id": "7eaba296-f934-4fda-99a5-0f2fefb1e72b",
+			"name": "Get all boards",
+			"url": "{{baseURL}}/1/organizations/{{organizationID}}/boards?key={{apiKey}}&token={{apiToken}}",
+			"time": 484,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful GET request": true,
+				"Set boardIDs to enviroment variable": true,
+				"Get all boards in the workspace": true
+			},
+			"testPassFailCounts": {
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set boardIDs to enviroment variable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get all boards in the workspace": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				484
+			],
+			"allTests": [
+				{
+					"Successful GET request": true,
+					"Set boardIDs to enviroment variable": true,
+					"Get all boards in the workspace": true
+				}
+			]
+		},
+		{
+			"id": "35ca5b38-570c-4f19-8357-16e56adbfc1f",
+			"name": "Update the name of the board to the correct new name value",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 462,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful PUT request": true,
+				"Check if the board name has been updated": true,
+				"Check if board new name is a correct value": true,
+				"Check if board new name has correct length": true
+			},
+			"testPassFailCounts": {
+				"Successful PUT request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if the board name has been updated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if board new name is a correct value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if board new name has correct length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				462
+			],
+			"allTests": [
+				{
+					"Successful PUT request": true,
+					"Check if the board name has been updated": true,
+					"Check if board new name is a correct value": true,
+					"Check if board new name has correct length": true
+				}
+			]
+		},
+		{
+			"id": "4f99fba6-b9d6-43d3-aea2-43ad7d585c5b",
+			"name": "Update the board name to consist of only one space or multiple spaces",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 166,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Unsuccessful PUT request": true,
+				"Check if updated name value is a space or spaces": true
+			},
+			"testPassFailCounts": {
+				"Unsuccessful PUT request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if updated name value is a space or spaces": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				166
+			],
+			"allTests": [
+				{
+					"Unsuccessful PUT request": true,
+					"Check if updated name value is a space or spaces": true
+				}
+			]
+		},
+		{
+			"id": "c5ed35a1-8752-46d2-be53-d27e173eab69",
+			"name": "Update the name of the board to include no name value",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 306,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Unsuccessful PUT request": true,
+				"Check if updated board name has no value": true
+			},
+			"testPassFailCounts": {
+				"Unsuccessful PUT request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if updated board name has no value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				306
+			],
+			"allTests": [
+				{
+					"Unsuccessful PUT request": true,
+					"Check if updated board name has no value": true
+				}
+			]
+		},
+		{
+			"id": "28037f35-1141-4bc0-8aaf-77731db80a9c",
+			"name": "Update the name of the board to include special characters",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 256,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful PUT request": true,
+				"Check if updated name consists of special characters": true
+			},
+			"testPassFailCounts": {
+				"Successful PUT request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if updated name consists of special characters": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				256
+			],
+			"allTests": [
+				{
+					"Successful PUT request": true,
+					"Check if updated name consists of special characters": true
+				}
+			]
+		},
+		{
+			"id": "32d78843-9d07-49d8-ba69-fe0c30d821ff",
+			"name": "Delete a board",
+			"url": "{{baseURL}}/1/boards/{{boardID}}?key={{apiKey}}&token={{apiToken}}",
+			"time": 1342,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful DELETE request": true,
+				"Check if the board has been deleted": true
+			},
+			"testPassFailCounts": {
+				"Successful DELETE request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if the board has been deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1342
+			],
+			"allTests": [
+				{
+					"Successful DELETE request": true,
+					"Check if the board has been deleted": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 5439,
+	"collection": {
+		"requests": [
+			{
+				"id": "6cf5c556-148e-4970-9afe-316435f6c6be",
+				"method": "POST"
+			},
+			{
+				"id": "74527284-d14b-4757-a90e-ff8f56c1190d",
+				"method": "POST"
+			},
+			{
+				"id": "1122ea8b-aa52-4251-acd4-b043e48c4ef4",
+				"method": "POST"
+			},
+			{
+				"id": "95145bf3-a43f-43f4-b2a6-094732650119",
+				"method": "POST"
+			},
+			{
+				"id": "b779a00e-16a2-448b-8013-3ce755439ad3",
+				"method": "GET"
+			},
+			{
+				"id": "7eaba296-f934-4fda-99a5-0f2fefb1e72b",
+				"method": "GET"
+			},
+			{
+				"id": "35ca5b38-570c-4f19-8357-16e56adbfc1f",
+				"method": "PUT"
+			},
+			{
+				"id": "4f99fba6-b9d6-43d3-aea2-43ad7d585c5b",
+				"method": "PUT"
+			},
+			{
+				"id": "c5ed35a1-8752-46d2-be53-d27e173eab69",
+				"method": "PUT"
+			},
+			{
+				"id": "28037f35-1141-4bc0-8aaf-77731db80a9c",
+				"method": "PUT"
+			},
+			{
+				"id": "32d78843-9d07-49d8-ba69-fe0c30d821ff",
+				"method": "DELETE"
+			}
+		]
+	}
+}
