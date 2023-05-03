@@ -33,7 +33,7 @@ Test were conducted based on a <b>test scenario</b>: ![testScenario_TrelloAPI.pd
 
 **Bug report**: ![bugReport_TrelloAPI.pdf](./bugReport_01_TrelloAPI.pdf)<br>
 
-⚡🤖 During the testing procedure, **28 automated tests** were executed. 🤖⚡ <br>
+⚡🤖 During the testing procedure, **28 automated tests** were executed. [Check here](https://github.com/paulinaszybinska/Trello-REST-API/blob/main/The%20Trello%20REST%20API.postman_test_run.json)🤖⚡ <br>
 
 The complete Trello REST API documentation is available [here](https://developer.atlassian.com/cloud/trello/rest/). <br><br>
 
