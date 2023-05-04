@@ -56,7 +56,7 @@ The complete Trello REST API documentation is available [here](https://developer
 #### To save your Trello API key and token as environment variables:
 * Open Postman and click on the "Environment" dropdown in the top left corner.
 * Click on the "New" button to create a new environment and choose "Environment" icon.
-* Give your environment a name and add the Trello API key and token as key-value pairs. <b>NOTE! For collections from this repository, the API Key variable is named {{APIKey}} and the token variable is named {{token}}.</b>
+* Give your environment a name and add the Trello API key and token as key-value pairs. <b>NOTE! For collections from this repository, the API Key variable is named {{apiKey}} and the token variable is named {{apiToken}}.</b>
 * Click "Save" to save the environment.
 * In your request, click on the "Environment" dropdown and select the environment you just created.
 * Use the {{Variable}} syntax in your request to reference the environment variables. <br><br>
